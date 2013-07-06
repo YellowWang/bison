@@ -41,7 +41,7 @@ IDENTFIER    [a-zA-Z][a-zA-Z0-9_]*
 
 
 %%
-{DIGIT}   {/*ECHO;*/ /*yylval.expression.m_data.name[0]=0;*/
+{DIGIT}   {/*ECHO;*/
 		  yylval.num = atof(yytext);
 		  return DOUBLE_CONST;}
 {NOTATION} { /*ECHO*/; return yytext[0];}
@@ -61,9 +61,3 @@ IDENTFIER    [a-zA-Z][a-zA-Z0-9_]*
 .
 
 %%
-
-/*int main()
-{
-   yyin = fopen("text", "r");
-   yylex();
-}*/

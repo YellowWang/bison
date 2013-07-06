@@ -2,7 +2,6 @@
   //#define YYSTYPE double
 #include <ctype.h>
 #include <stdio.h>
-#include <math.h>
 int yylex (void);
 void yyerror (char const *);
 %}
