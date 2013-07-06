@@ -15,6 +15,7 @@
   
   typedef union YYSTYPE
   {
+    Expressions* expressions;
     Expression* expression;
 	char		name[32];
 	double 		num;
@@ -25,7 +26,8 @@
 
 %option noyywrap
 
-DIGIT    [0-9]+
+DIGIT_INT		[0-9]+
+DIGIT_DOUBLE    [0-9]*\.[0-9]+
 NOTATION \;|\{|\}|\(|\)|\+|\-|\*|\/|<|=
 ASSIGN	 <-
 BLANK    \f|\r|\ |\t|\v
@@ -41,7 +43,10 @@ IDENTFIER    [a-zA-Z][a-zA-Z0-9_]*
 
 
 %%
-{DIGIT}   {/*ECHO;*/
+{DIGIT_INT}   {/*ECHO;*/
+		  yylval.num = atof(yytext);
+		  return DOUBLE_CONST;}
+{DIGIT_DOUBLE}   {/*ECHO;*/
 		  yylval.num = atof(yytext);
 		  return DOUBLE_CONST;}
 {NOTATION} { /*ECHO*/; return yytext[0];}
