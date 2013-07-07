@@ -343,7 +343,7 @@ protected:
 void Execute(Expression* e)
 {
   if (e)
-	printf("%lf\n", e->execute());
+	printf("%0.2lf\n", e->execute());
 }
 
 void Execute(Expressions* exprs)
