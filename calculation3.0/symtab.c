@@ -35,17 +35,4 @@ void SetValue(char* name, double num)
    }
    return 0;
  }
- 
- double GetNum(char* name)
- {
-   double num = 0;
-   //printf("@GetNum %s,%lf\n", e->name, e->num);
-   if (name[0] != 0)
-   {
-	 //	 printf("@@1");
-	 num = GetValue(name);
-   }
-
-   return num;
- }
 

@@ -9,6 +9,5 @@ extern int g_symnum;
 
 void SetValue(char* name, double num);
 double GetValue(char* name);
-double GetNum(char* name);
 
 #endif

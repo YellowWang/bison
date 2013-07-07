@@ -195,7 +195,7 @@ public:
 	if (m_name[0]==0)
 	  return 0;
 	double num = 0;
-	num = GetNum(m_name);
+	num = GetValue(m_name);
 	SetValue(m_name, num);
 	return num;
   }
