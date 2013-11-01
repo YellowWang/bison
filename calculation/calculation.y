@@ -1,9 +1,9 @@
 %{
   //#define YYSTYPE double
-#include <ctype.h>
-#include <stdio.h>
-int yylex (void);
-void yyerror (char const *);
+  #include <ctype.h>
+  #include <stdio.h>
+  int yylex (void);
+  void yyerror (char const *);
 %}
 
 %token NUM
